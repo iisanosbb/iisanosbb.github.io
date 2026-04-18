@@ -1,0 +1,175 @@
+/* ── 小本奔 Landing Page ── */
+
+:root {
+  --orange: #E3752D;
+  --orange-dark: #c4601e;
+  --cream: #FFF0CA;
+  --cream-dark: #f5e4b0;
+  --text-dark: #2a1a0e;
+  --text-mid: #5a3a1e;
+  --font: 'Noto Sans TC', 'Microsoft JhengHei', '黑體-繁', sans-serif;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font); color: var(--text-dark); background: var(--cream); overflow-x: hidden; }
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 48px; background: var(--orange);
+}
+.nav-logo { font-weight: 900; font-size: 1.4rem; color: var(--cream); letter-spacing: .05em; text-decoration: none; }
+.nav-cta {
+  border: 2px solid var(--cream); color: var(--cream); background: transparent;
+  padding: 9px 22px; font-size: .9rem; font-weight: 700; letter-spacing: .08em;
+  text-decoration: none; transition: background .2s, color .2s;
+}
+.nav-cta:hover { background: var(--cream); color: var(--orange); }
+
+/* ── SHARED ── */
+.section-label { font-size: .75rem; letter-spacing: .2em; font-weight: 400; margin-bottom: 24px; opacity: .7; }
+h1, h2, h3 { font-weight: 900; line-height: 1.3; }
+
+/* ── § 1  HERO ── */
+#hero {
+  background: var(--orange); min-height: 100vh;
+  display: flex; flex-direction: column; justify-content: center;
+  padding: 140px 80px 80px; overflow: hidden; position: relative;
+}
+#hero::before {
+  content: ''; position: absolute; inset: 0;
+  background: url('IMG_1593.jpg') center 30% / cover no-repeat;
+  opacity: .18; pointer-events: none;
+}
+.hero-tag {
+  display: inline-flex; align-items: center;
+  border: 1px solid rgba(255,255,255,.5); color: rgba(255,255,255,.85);
+  font-size: .78rem; letter-spacing: .15em; padding: 6px 16px;
+  margin-bottom: 48px; width: fit-content;
+}
+.hero-tag span { margin: 0 8px; opacity: .5; }
+.hero-h1 { font-size: clamp(2.6rem,5vw,4.2rem); color: var(--cream); margin-bottom: 32px; position: relative; z-index: 1; }
+.hero-body { color: rgba(255,255,255,.88); font-size: 1.05rem; line-height: 1.9; margin-bottom: 40px; position: relative; z-index: 1; }
+.hero-location { color: rgba(255,255,255,.6); font-size: .82rem; letter-spacing: .12em; margin-bottom: 64px; }
+.hero-scroll { display: flex; align-items: center; gap: 14px; color: rgba(255,255,255,.7); font-size: .82rem; letter-spacing: .15em; }
+.hero-scroll::before { content: ''; display: block; width: 40px; height: 1px; background: rgba(255,255,255,.5); }
+
+/* ── § 2  品牌理念 ── */
+#belief { background: var(--cream); padding: 120px 80px; }
+.belief-inner { max-width: 1100px; margin: 0 auto; }
+.belief-header { margin-bottom: 64px; }
+.belief-header .section-label { color: var(--orange); }
+.belief-h2 { font-size: clamp(2rem,3.5vw,3rem); color: var(--text-dark); }
+.belief-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.belief-card {
+  background: var(--cream-dark); border: 1.5px solid rgba(227,117,45,.2);
+  aspect-ratio: 9/16; display: flex; align-items: center; justify-content: center; overflow: hidden;
+}
+.belief-card:nth-child(2) { margin-top: 32px; }
+.belief-card:nth-child(3) { margin-top: 64px; }
+.belief-card-placeholder { color: rgba(90,58,30,.3); font-size: .8rem; letter-spacing: .1em; text-align: center; padding: 20px; }
+
+/* ── § 3  三階段 ── */
+#phases { background: var(--orange); padding: 120px 80px; }
+.phases-inner { max-width: 1100px; margin: 0 auto; }
+.phases-header { margin-bottom: 64px; }
+.phases-header .section-label { color: rgba(255,255,255,.7); }
+.phases-h2 { font-size: clamp(2rem,3.5vw,2.8rem); color: var(--cream); }
+.phases-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 32px; }
+.phase-card { display: flex; flex-direction: column; }
+.phase-img {
+  width: 100%; aspect-ratio: 1; background: rgba(255,255,255,.12);
+  display: flex; align-items: center; justify-content: center; margin-bottom: 24px; overflow: hidden;
+}
+.phase-img img { width: 100%; height: 100%; object-fit: cover; }
+.phase-num { font-size: 2.2rem; font-weight: 900; color: rgba(255,255,255,.3); line-height: 1; margin-bottom: 8px; }
+.phase-title { font-weight: 700; font-size: 1.05rem; color: var(--cream); margin-bottom: 12px; letter-spacing: .05em; }
+.phase-desc { color: rgba(255,255,255,.8); font-size: .88rem; line-height: 1.8; margin-bottom: 16px; }
+.phase-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.phase-tag { border: 1px solid rgba(255,255,255,.35); color: rgba(255,255,255,.7); font-size: .72rem; padding: 3px 10px; letter-spacing: .08em; }
+
+/* ── § 4  課表框架 ── */
+#framework { background: var(--cream); padding: 120px 80px; text-align: center; }
+.framework-inner { max-width: 900px; margin: 0 auto; }
+.framework-inner .section-label { color: var(--orange); }
+.framework-h2 { font-size: clamp(1.8rem,3vw,2.6rem); color: var(--text-dark); margin-bottom: 20px; }
+.framework-sub { color: var(--text-mid); font-size: .95rem; line-height: 1.8; margin-bottom: 56px; }
+.framework-placeholder {
+  background: var(--cream-dark); border: 2px dashed rgba(227,117,45,.3);
+  height: 480px; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; gap: 12px;
+  color: rgba(90,58,30,.35); font-size: .9rem; letter-spacing: .1em;
+}
+
+/* ── § 5  修業證書 + 學生見證 ── */
+#graduates { background: var(--orange); padding: 120px 80px; }
+.graduates-inner { max-width: 1100px; margin: 0 auto; }
+.graduates-inner .section-label { color: rgba(255,255,255,.7); }
+.graduates-h2 { font-size: clamp(2rem,3.5vw,2.8rem); color: var(--cream); margin-bottom: 64px; }
+
+.cert-block {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 60px;
+  align-items: center; margin-bottom: 80px; padding-bottom: 80px;
+  border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.cert-visual { background: var(--cream); border-radius: 4px; padding: 32px; }
+.cert-inner {
+  background: var(--orange); border-radius: 4px; padding: 32px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cert-inner::before { content: '✦'; position: absolute; top: 12px; left: 12px; font-size: 1rem; color: rgba(255,255,255,.5); }
+.cert-inner::after  { content: '✦'; position: absolute; bottom: 12px; right: 12px; font-size: 1rem; color: rgba(255,255,255,.5); }
+.cert-title { font-weight: 900; font-size: 1.5rem; color: var(--cream); margin-bottom: 16px; letter-spacing: .2em; }
+.cert-name  { font-weight: 900; font-size: 2rem; color: var(--cream); margin-bottom: 20px; }
+.cert-poem  { color: rgba(255,255,255,.85); font-size: .9rem; line-height: 2; margin-bottom: 24px; }
+.cert-footer { display: flex; justify-content: space-between; align-items: flex-end; font-size: .75rem; color: rgba(255,255,255,.7); }
+.cert-emoji { font-size: 1.4rem; margin-bottom: 16px; }
+.cert-headline { font-weight: 900; font-size: 1.3rem; color: var(--cream); margin-bottom: 20px; line-height: 1.5; }
+.cert-highlight { color: var(--cream); font-weight: 700; }
+.cert-body { color: rgba(255,255,255,.82); font-size: .9rem; line-height: 1.9; margin-bottom: 12px; }
+.cert-note { color: rgba(255,255,255,.55); font-size: .78rem; font-style: italic; line-height: 1.7; }
+
+.students-label { color: rgba(255,255,255,.7); font-size: .75rem; letter-spacing: .2em; margin-bottom: 16px; }
+.students-h3 { font-weight: 900; font-size: 1.8rem; color: var(--cream); margin-bottom: 40px; }
+.students-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.student-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.15); padding: 28px 24px; transition: background .2s; }
+.student-card:hover { background: rgba(255,255,255,.13); }
+.student-card.featured { background: rgba(255,255,255,.15); }
+.student-meta { font-size: .75rem; color: rgba(255,255,255,.55); letter-spacing: .1em; margin-bottom: 12px; }
+.student-quote { color: rgba(255,255,255,.75); font-size: .9rem; line-height: 1.7; font-style: italic; }
+.student-name { margin-top: 16px; font-weight: 700; color: var(--cream); font-size: .88rem; }
+
+/* ── § 6  關於教練 + CTA ── */
+#coach { background: var(--cream); padding: 120px 80px; }
+.coach-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.coach-media { aspect-ratio: 9/16; max-height: 560px; overflow: hidden; position: relative; background: var(--cream-dark); }
+.coach-media img { width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.coach-video-note {
+  position: absolute; bottom: 16px; left: 50%; transform: translateX(-50%);
+  background: rgba(0,0,0,.4); color: white; font-size: .72rem;
+  padding: 4px 12px; letter-spacing: .1em; white-space: nowrap;
+}
+.coach-content .section-label { color: var(--orange); }
+.coach-h2 { font-size: clamp(1.8rem,2.8vw,2.4rem); color: var(--text-dark); margin-bottom: 24px; }
+.coach-body { color: var(--text-mid); font-size: .95rem; line-height: 1.9; margin-bottom: 40px; }
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: var(--orange); color: var(--cream);
+  padding: 16px 32px; font-size: 1rem; font-weight: 700;
+  letter-spacing: .1em; text-decoration: none;
+  transition: background .2s, transform .15s; border: none; cursor: pointer;
+}
+.cta-btn:hover { background: var(--orange-dark); transform: translateY(-2px); }
+.cta-line { margin-top: 20px; font-size: .8rem; color: rgba(90,58,30,.5); letter-spacing: .08em; }
+
+/* ── FOOTER ── */
+footer { background: var(--text-dark); color: rgba(255,255,255,.45); text-align: center; padding: 32px; font-size: .78rem; letter-spacing: .1em; line-height: 2; }
+
+/* ── FADE IN ── */
+.fade-in { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.d1 { transition-delay: .1s; }
+.d2 { transition-delay: .2s; }
+.d3 { transition-delay: .3s; }
