@@ -207,7 +207,7 @@ footer { background: var(--text-dark); color: rgba(255,255,255,.45); text-align:
   /* 課表框架 */
   #framework { padding: 72px 24px; }
   .framework-h2 { font-size: 1.6rem; }
-  #framework iframe { height: 1250px; }
+  #framework iframe { height: 1000px; }
 
   /* 修業證書 + 見證 */
   #graduates { padding: 72px 24px; }
